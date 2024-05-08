@@ -1,15 +1,17 @@
 //
-//  LoginView.swift
+//  ResgistrationView.swift
 //  Messenger
 //
-//  Created by Aram on 07.05.24.
+//  Created by Aram on 08.05.24.
 //
 
 import SwiftUI
 
-struct LoginView: View {
+struct RegistrationView: View {
     @State private var email = ""
+    @State private var fullname = ""
     @State private var password = ""
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
@@ -29,6 +31,12 @@ struct LoginView: View {
                         .padding(12)
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
+                    
+                    TextField("Enter your fullname..", text: $fullname)
+                        .font(.subheadline)
+                        .padding(12)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
                      
                     SecureField("Enter your password..", text: $password)
                         .font(.subheadline)
@@ -38,25 +46,11 @@ struct LoginView: View {
                 }
                 .padding()
                 
-                // forgot password
-                
-                Button {
-                    print("Forgot password")
-                } label: {
-                    Text("Forgot password?")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .padding(.top)
-                        .padding(.trailing, 28)
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                
-                
                 // Login button
                 Button{
                     print("Handle Login")
                 } label: {
-                    Text("Login")
+                    Text("Sign Up")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
@@ -66,55 +60,31 @@ struct LoginView: View {
                 }
                 .padding(.vertical)
                 
-                // facebook login
-                HStack {
-                    Rectangle()
-                        .frame(width: (UIScreen.main.bounds.width) / 2 - 40, height: 0.5)
-                    
-                    Text("OR")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                    
-                    Rectangle()
-                        .frame(width: (UIScreen.main.bounds.width) / 2 - 40, height: 0.5)
-                }
-                .foregroundStyle(.gray)
-                
-                HStack {
-                    Image(.facebookLogo)
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    
-                    Text("Continue with Facebook")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(Color(.systemBlue))
-                }
-                .padding(.top, 8)
-                
                 Spacer()
                 
                 // sign up link
                 Divider()
                 
-                NavigationLink {
-                    RegistrationView()
-                        .navigationBarBackButtonHidden()
+                Button {
+                    dismiss()
                 } label: {
                     HStack {
                         Text("Don't have an account?")
                         
-                        Text("Sign Up")
+                        Text("Sign In")
                             .fontWeight(.semibold)
                     }
                     .font(.footnote)
                 }
                 .padding(.vertical)
+                
+                
+                
             }
         }
     }
 }
 
 #Preview {
-    LoginView()
+    RegistrationView()
 }
