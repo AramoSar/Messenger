@@ -11,6 +11,7 @@
 		F771196C2BE9F3D400C2006A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771196B2BE9F3D400C2006A /* ContentView.swift */; };
 		F771196E2BE9F3D500C2006A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F771196D2BE9F3D500C2006A /* Assets.xcassets */; };
 		F77119712BE9F3D500C2006A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77119702BE9F3D500C2006A /* Preview Assets.xcassets */; };
+		F77119802BE9F48C00C2006A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771197F2BE9F48C00C2006A /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		F771196B2BE9F3D400C2006A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F771196D2BE9F3D500C2006A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F77119702BE9F3D500C2006A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F771197F2BE9F48C00C2006A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,11 @@
 		F77119682BE9F3D400C2006A /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
-				F77119692BE9F3D400C2006A /* MessengerApp.swift */,
-				F771196B2BE9F3D400C2006A /* ContentView.swift */,
+				F771197B2BE9F40800C2006A /* App */,
+				F771197A2BE9F40700C2006A /* Core */,
+				F77119792BE9F40500C2006A /* Extensions */,
+				F77119782BE9F40300C2006A /* Model */,
+				F77119772BE9F40100C2006A /* Service */,
 				F771196D2BE9F3D500C2006A /* Assets.xcassets */,
 				F771196F2BE9F3D500C2006A /* Preview Content */,
 			);
@@ -65,6 +70,68 @@
 				F77119702BE9F3D500C2006A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F77119772BE9F40100C2006A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F77119782BE9F40300C2006A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F77119792BE9F40500C2006A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F771197A2BE9F40700C2006A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F771197D2BE9F46000C2006A /* Authentication */,
+				F771197C2BE9F45F00C2006A /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F771197B2BE9F40800C2006A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F77119692BE9F3D400C2006A /* MessengerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F771197C2BE9F45F00C2006A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				F771196B2BE9F3D400C2006A /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		F771197D2BE9F46000C2006A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F771197E2BE9F47D00C2006A /* View */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		F771197E2BE9F47D00C2006A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F771197F2BE9F48C00C2006A /* LoginView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F77119802BE9F48C00C2006A /* LoginView.swift in Sources */,
 				F771196C2BE9F3D400C2006A /* ContentView.swift in Sources */,
 				F771196A2BE9F3D400C2006A /* MessengerApp.swift in Sources */,
 			);
