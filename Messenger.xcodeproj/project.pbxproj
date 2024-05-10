@@ -13,6 +13,8 @@
 		F77119712BE9F3D500C2006A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77119702BE9F3D500C2006A /* Preview Assets.xcassets */; };
 		F77119802BE9F48C00C2006A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771197F2BE9F48C00C2006A /* LoginView.swift */; };
 		F771A5CA2BEDF9CA0074D9CF /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771A5C92BEDF9CA0074D9CF /* NewMessageView.swift */; };
+		F771A5D02BEE00B70074D9CF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771A5CF2BEE00B70074D9CF /* ProfileView.swift */; };
+		F771A5D22BEE03480074D9CF /* SettingsOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F771A5D12BEE03480074D9CF /* SettingsOptionsViewModel.swift */; };
 		F775C0B72BEB56F000DACED2 /* ResgistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F775C0B62BEB56F000DACED2 /* ResgistrationView.swift */; };
 		F775C0BA2BEB6C4600DACED2 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F775C0B92BEB6C4600DACED2 /* InboxView.swift */; };
 		F775C0BD2BEB6FAF00DACED2 /* ActiveNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F775C0BC2BEB6FAF00DACED2 /* ActiveNowView.swift */; };
@@ -27,6 +29,8 @@
 		F77119702BE9F3D500C2006A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F771197F2BE9F48C00C2006A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F771A5C92BEDF9CA0074D9CF /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		F771A5CF2BEE00B70074D9CF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F771A5D12BEE03480074D9CF /* SettingsOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionsViewModel.swift; sourceTree = "<group>"; };
 		F775C0B62BEB56F000DACED2 /* ResgistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResgistrationView.swift; sourceTree = "<group>"; };
 		F775C0B92BEB6C4600DACED2 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
 		F775C0BC2BEB6FAF00DACED2 /* ActiveNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveNowView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				F771197D2BE9F46000C2006A /* Authentication */,
 				F775C0B82BEB6C2D00DACED2 /* Inbox */,
 				F771A5C82BEDF9A10074D9CF /* NewMessage */,
+				F771A5CB2BEDFFCC0074D9CF /* Profile */,
 				F771197C2BE9F45F00C2006A /* Root */,
 			);
 			path = Core;
@@ -154,6 +159,31 @@
 				F771A5C92BEDF9CA0074D9CF /* NewMessageView.swift */,
 			);
 			path = NewMessage;
+			sourceTree = "<group>";
+		};
+		F771A5CB2BEDFFCC0074D9CF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F771A5CE2BEDFFE30074D9CF /* View */,
+				F771A5CC2BEDFFDD0074D9CF /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F771A5CC2BEDFFDD0074D9CF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F771A5D12BEE03480074D9CF /* SettingsOptionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F771A5CE2BEDFFE30074D9CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F771A5CF2BEE00B70074D9CF /* ProfileView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F775C0B82BEB6C2D00DACED2 /* Inbox */ = {
@@ -244,12 +274,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F775C0BF2BEB71C100DACED2 /* InboxRowView.swift in Sources */,
+				F771A5D02BEE00B70074D9CF /* ProfileView.swift in Sources */,
 				F771A5CA2BEDF9CA0074D9CF /* NewMessageView.swift in Sources */,
 				F77119802BE9F48C00C2006A /* LoginView.swift in Sources */,
 				F771196C2BE9F3D400C2006A /* ContentView.swift in Sources */,
 				F775C0BA2BEB6C4600DACED2 /* InboxView.swift in Sources */,
 				F775C0BD2BEB6FAF00DACED2 /* ActiveNowView.swift in Sources */,
 				F771196A2BE9F3D400C2006A /* MessengerApp.swift in Sources */,
+				F771A5D22BEE03480074D9CF /* SettingsOptionsViewModel.swift in Sources */,
 				F775C0B72BEB56F000DACED2 /* ResgistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
