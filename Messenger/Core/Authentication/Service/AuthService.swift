@@ -18,7 +18,7 @@ class AuthService {
     init() {
         self.userSession = Auth.auth().currentUser
         loadCurrentUserData()
-        print("DEBUG: User session id is \(userSession?.uid)")
+        //print("DEBUG: User session id is \(userSession?.uid)")
     }
     
     @MainActor

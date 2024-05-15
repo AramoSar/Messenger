@@ -19,21 +19,46 @@ struct InboxView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
+            
+            
+            List {
                 ActiveNowView()
-                List {
-                    ForEach(0 ... 10, id: \.self) { message in
-                        InboxRowView()
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .padding(.vertical)
+                    .padding(.horizontal, 4)
+                
+                ForEach(viewModel.recentMessages) { message in
+                    ZStack {
+                        NavigationLink(value: message) {
+                            EmptyView()
+                        }.opacity(0.0)
+                        
+                        InboxRowView(message: message)
                     }
                 }
-                .listStyle(PlainListStyle())
-                .frame(height: UIScreen.main.bounds.height - 120)
             }
+            .navigationTitle("Chats")
+            .navigationBarTitleDisplayMode(.inline)
+            .listStyle(PlainListStyle())
+            .frame(height: UIScreen.main.bounds.height - 120)
+            
             .onChange(of: selectedUser, perform: { newValue in
                 showChat = newValue != nil
             })
-            .navigationDestination(for: User.self, destination: { user in
-                ProfileView(user: user)
+
+            .navigationDestination(for: Message.self, destination: { message in
+                if let user = message.user {
+                    ChatView(user: user)
+                }
+            })
+            .navigationDestination(for: Route.self, destination: { route in
+                switch route {
+                case .profile(let user):
+                    ProfileView(user: user)
+                case .chatView(let user):
+                    ChatView(user: user)
+                }
             })
             .navigationDestination(isPresented: $showChat, destination: {
                 if let user = selectedUser {
@@ -43,16 +68,13 @@ struct InboxView: View {
             .fullScreenCover(isPresented: $showNewMessageView, content: {
                 NewMessageView(selectedUser: $selectedUser)
             })
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    HStack {
-                        NavigationLink(value: user) {
+                    if let user {
+                        NavigationLink(value: Route.profile(user)) {
                             CircularProfileImageView(user: user, size: .xSmall)
                         }
-                        
-                        Text("Chats")
-                            .font(.title)
-                            .fontWeight(.semibold)
                     }
                 }
                 
